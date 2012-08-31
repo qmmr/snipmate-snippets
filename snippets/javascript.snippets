@@ -14,11 +14,16 @@ snippet f
 	function(${1}) {
 		${3}
 	}${2:;}
-# Immediate function
-snippet (f
-	(function(${1}) {
+# function expression
+snippet fe
+	var ${1:function_name} = function (${2:argument}) {
+		${3: // body}
+	};
+# IIFE /Immediate Invoked Function Expression/
+snippet iife
+	(function (${1}) {
 		${3:/* code */}
-	}(${2}));
+	})(${2});
 # if
 snippet if
 	if (${1:true}) {
@@ -28,7 +33,8 @@ snippet if
 snippet ife
 	if (${1:true}) {
 		${2}
-	} else {
+	}
+	else {
 		${3}
 	}
 # tertiary conditional
